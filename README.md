@@ -3,7 +3,7 @@ Automatic constructor for character animation in LÖVE.
 
 # Overview
 
-It's a simple library for use when you need a easy way to animate characters
+It's a simple library for use when you need an easy way to animate characters,
 working on LÖVE framework.
 In relation with the artistic part, in this case you use separate image with
 the character movements. The structure of folder tree is what define the
@@ -14,6 +14,8 @@ structure.
 #Example of use
 
 Imagine this tree-folder content:
+
+```
 
 .
 ├── img
@@ -51,6 +53,8 @@ Imagine this tree-folder content:
 ├── lib
 │   └── acca.lua
 └── main.lua
+
+```
 
 Where `img` is the folder where we save the images for our game. Now, the
 Scorpion folder is your character and the subdirectories are the actions.
