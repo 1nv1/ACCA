@@ -42,7 +42,7 @@ function newCharacter(folder, element, ext, delay, default)
       while love.filesystem.exists(path..file) do
         a.action[v].img[a.action[v].frames] = love.graphics.newImage(path..file)
         a.action[v].frames = a.action[v].frames + 1
-        if a.action[v].frames < 9 then 
+        if a.action[v].frames <= 9 then 
           file = "0"..a.action[v].frames.."."..ext
         else
           file = a.action[v].frames.."."..ext
