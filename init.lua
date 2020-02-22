@@ -23,7 +23,7 @@ function newCharacter(folder, element, ext, delay, default)
   local actions = love.filesystem.getDirectoryItems(folder.."/"..element)
   for k, v in ipairs(actions) do
     --love.graphics.print(action, 0, 0)
-    if love.filesystem.isDirectory(folder.."/"..element.."/"..v) then
+    if love.filesystem.getInfo(folder.."/"..element.."/"..v) ~= nil then
       a.action[v] = {
         img = {},
         frames = 1,
@@ -39,7 +39,7 @@ function newCharacter(folder, element, ext, delay, default)
       -- Need get all pictures
       local file = "01."..ext
       local path = folder.."/"..element.."/"..v.."/"
-      while love.filesystem.exists(path..file) do
+      while love.filesystem.getInfo(path..file) ~= nil do
         a.action[v].img[a.action[v].frames] = love.graphics.newImage(path..file)
         a.action[v].frames = a.action[v].frames + 1
         if a.action[v].frames <= 9 then 
